@@ -1,8 +1,12 @@
-# Melissa Data Phone Object Linux Python3 Sample
+# Melissa - Phone Object Linux Python3
 
 ## Purpose
 
-This is a sample of the Melissa Data Phone Object using Python3
+This code showcases the Melissa Phone Object using Python3
+
+Please feel free to copy or embed this code to your own project. Happy coding!
+
+For the latest Melissa Phone Object release notes, please visit: https://releasenotes.melissa.com/on-premise-api/phone-object/
 
 The console will ask the user for:
 
@@ -30,7 +34,7 @@ And return
 
 #### libmdPhone.so
 
-This is the c++ code of the Melissa Data Object.
+This is the c++ code of the Melissa Object.
 
 #### Data File(s)
 - mdGlobalPhone.dat
@@ -44,23 +48,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 This project is compatible with Python3
 
-#### Install the Python3
+#### Install Python3
 Before starting, make sure that Python3 has been correctly installed on your machine and your environment paths are configured. 
 
 You can download Python here: 
 https://www.python.org/downloads/
 
-To set up your Path correctly to use the python3 command, execute the following steps:
-1) Run Powershell as an administrator 
-2) Execute the command: 
-`New-Item -ItemType SymbolicLink -Path "Link" -Target "Target"`
-
-    where "Target" is the path to py.exe (by default this should be "C:\Windows\py.exe")\
-    and "Link" is the path to py.exe, but "py.exe" is replaced with "python3.exe"\
-    For Example:\
-    `New-Item -ItemType SymbolicLink -Path "C:\Windows\python3.exe" -Target "C:\Windows\py.exe"`
-
-If you are unsure, you can check by opening a command prompt window and typing the following:
+You can check that your environment is set up correctly by opening a command prompt window and typing the following:
 `python3 --version`
 
 ![alt text](/screenshots/python_version.PNG)
@@ -103,26 +97,26 @@ Melissa Updater is a CLI application allowing the user to update their Melissa a
 
 #### Different ways to get data file(s)
 1.  Using Melissa Updater
-	- It will handle all of the data download/path and dll(s) for you. 
-2.  If you already have the latest DQS Release (ZIP), you can find the data file(s) and dll(s) in there
-	- Use the location of where you copied/installed the data and update the "$DataPath" variable in the powershell script.
-	- Copy all the dll(s) mentioned above into the `MelissaDataPhoneObjectLinuxPython3Sample` project folder.
+	- It will handle all of the data download/path and .so file(s) for you. 
+2.  If you already have the latest DQS Release (ZIP), you can find the data file(s) and .so file(s) in there
+	- Use the location of where you copied/installed the data and update the "DataPath" variable in the bash script.
+	- Copy all the .so file(s) mentioned above into the `MelissaPhoneObjectLinuxPython3` project folder.
 	
 ----------------------------------------
 #### Change Bash Script Permissions
 To be able to run the bash script, you must first make it an executable using the command:
 
-`chmod +x MelissaDataPhoneObjectLinuxPython3Sample.sh`
+`chmod +x MelissaPhoneObjectLinuxPython3.sh`
 
 Then you need to add permissions to the build directory with the command:
 
-`chmod +rwx MelissaDataPhoneObjectLinuxPython3Sample`
+`chmod +rwx MelissaPhoneObjectLinuxPython3`
 
 As an indicator, the filename will change colors once it becomes an executable.
 
-You may also need to alter permissions for the python files. To do this navigate into the MelissaDataPhoneObjectLinuxPython3Sample directory and run these commands: \
-`chmod +rx MelissaDataPhoneObjectLinuxPython3Sample/MelissaDataPhoneObjectLinuxPython3Sample.py` \
-`chmod +rx MelissaDataPhoneObjectLinuxPython3Sample/mdPhone_pythoncode.py`
+You may also need to alter permissions for the python files. To do this navigate into the MelissaPhoneObjectLinuxPython3 directory and run these commands: \
+`chmod +rx MelissaPhoneObjectLinuxPython3/MelissaPhoneObjectLinuxPython3.py` \
+`chmod +rx MelissaPhoneObjectLinuxPython3/mdPhone_pythoncode.py`
 
 ## Run Bash Script
 Parameters:
@@ -130,31 +124,31 @@ Parameters:
  	
   This is convenient when you want to get results for a specific phone number in one run instead of testing multiple phone numbers in interactive mode.
 
-- --license (optional): a license string to test the phone object
+- --license (optional): a license string to test the Phone Object
 - --quiet (optional): add to the command if you do not want to get any console output from the Melissa Updater
 
 When you have modified the script to match your data location, let's run the script. There are two modes:
 - Interactive 
 
-	The script will prompt the user for a phone number, then use the provided number to test Phone object. For example:
+	The script will prompt the user for a phone number, then use the provided number to test Phone Object. For example:
 	```
-	$ ./MelissaDataPhoneObjectLinuxPython3Sample.sh
+	$ ./MelissaPhoneObjectLinuxPython3.sh
 	```
     For quiet mode:
     ```
-    $ ./MelissaDataPhoneObjectLinuxPython3Sample.sh --quiet
+    $ ./MelissaPhoneObjectLinuxPython3.sh -quiet
     ```
 - Command Line 
 
-	You can pass a phone number in ```--phone``` parameter and a license string in ```--license``` parameter to test Phone object. For example:
+	You can pass a phone number in ```--phone``` parameter and a license string in ```--license``` parameter to test Phone Object. For example:
 	```
-    $ ./MelissaDataPhoneObjectLinuxPython3Sample.sh --phone "800-635-4772" 
-    $ ./MelissaDataPhoneObjectLinuxPython3Sample.sh --phone "800-635-4772" --license "<your_license_string>"
+    $ ./MelissaPhoneObjectLinuxPython3.sh --phone "800-635-4772" 
+    $ ./MelissaPhoneObjectLinuxPython3.sh --phone "800-635-4772" --license "<your_license_string>"
     ```
 	For quiet mode:
     ```
-    $ ./MelissaDataPhoneObjectLinuxPython3Sample.sh --phone "800-635-4772" --quiet
-    $ ./MelissaDataPhoneObjectLinuxPython3Sample.sh --phone "800-635-4772" --license "<your_license_string>" --quiet
+    $ ./MelissaPhoneObjectLinuxPython3.sh --phone "800-635-4772" --quiet
+    $ ./MelissaPhoneObjectLinuxPython3.sh --phone "800-635-4772" --license "<your_license_string>" --quiet
     ```
 This is the expected output from a successful setup for interactive mode:
 
@@ -163,22 +157,22 @@ This is the expected output from a successful setup for interactive mode:
     
 ## Troubleshooting
 
-Troubleshooting for errors found while running your sample program.
+Troubleshooting for errors found while running your program.
 
 ### Errors:
 
 | Error      | Description |
 | ----------- | ----------- |
 | ErrorRequiredFileNotFound      | Program is missing a required file. Please check your Data folder and refer to the list of required files above. If you are unable to obtain all required files through the Melissa Updater, please contact technical support below. |
-| ErrorDatabaseExpired   | .db file(s) are expired. Please make sure you are downloading and using the latest release version. (If using the Melissa Updater, check powershell script for 'RELEASE_VERSION = {version}'  and change the release version if you are using an out of date release).     |
-| ErrorFoundOldFile   | File(s) are out of date. Please make sure you are downloading and using the latest release version. (If using the Melissa Updater, check powershell script for 'RELEASE_VERSION = {version}'  and change the release version if you are using an out of date release).    |
+| ErrorDatabaseExpired   | .db file(s) are expired. Please make sure you are downloading and using the latest release version. (If using the Melissa Updater, check bash script for 'RELEASE_VERSION = {version}'  and change the release version if you are using an out of date release).     |
+| ErrorFoundOldFile   | File(s) are out of date. Please make sure you are downloading and using the latest release version. (If using the Melissa Updater, check bash script for 'RELEASE_VERSION = {version}'  and change the release version if you are using an out of date release).    |
 | ErrorLicenseExpired   | Expired license string. Please contact technical support below. |
 
 
 ## Contact Us
 
 For free technical support, please call us at 800-MELISSA ext. 4
-(800-635-4772 ext. 4) or email us at tech@MelissaData.com.
+(800-635-4772 ext. 4) or email us at tech@melissa.com.
 
-To purchase this product, contact Melissa Data sales department at
+To purchase this product, contact Melissa sales department at
 800-MELISSA ext. 3 (800-635-4772 ext. 3).

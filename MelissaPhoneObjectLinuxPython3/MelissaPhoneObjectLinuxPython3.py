@@ -31,7 +31,7 @@ class PhoneObject:
         print(f"              Expiration Date: {self.md_phone_obj.GetLicenseExpirationDate()}")
       
         """
-        This number should match with file properties of the Melissa Data Object binary file.
+        This number should match with file properties of the Melissa Object binary file.
         If TEST appears with the build number, there may be a license key issue.
         """
         print(f"               Object Version: {self.md_phone_obj.GetBuildNumber()}\n")
@@ -42,8 +42,8 @@ class PhoneObject:
         result_codes = self.md_phone_obj.GetResults()
 
         """ 
-        ResultsCodes explain any issues phone object has with the object.
-        List of result codes for Phone object
+        ResultsCodes explain any issues Phone Object has with the object.
+        List of result codes for Phone Object
         https://wiki.melissadata.com/?title=Result_Code_Details#Phone_Object
         """
 
@@ -71,7 +71,7 @@ def parse_arguments():
     return (license, test_phone, data_path)
 
 def run_as_console(license, test_phone, data_path):
-    print("\n\n==== WELCOME TO MELISSA DATA PHONE OBJECT LINUX PYTHON3 SAMPLE =====\n")
+    print("\n\n========== WELCOME TO MELISSA PHONE OBJECT LINUX PYTHON3 ===========\n")
 
     phone_object = PhoneObject(license, data_path)
 
@@ -147,7 +147,7 @@ def run_as_console(license, test_phone, data_path):
             
               print("Invalid Response, please respond 'Y' or 'N'")
 
-    print("\n========== THANK YOU FOR USING MELISSA DATA PYTHON3 OBJECT =========\n")
+    print("\n============= THANK YOU FOR USING MELISSA PYTHON3 OBJECT ===========\n")
     
 
 

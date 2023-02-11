@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Name:    MelissaDataPhoneObjectLinuxPython3
-# Purpose: Use the Melissa Updater to make the MelissaDataPhoneObjectLinuxPython3 sample usable
+# Name:    MelissaPhoneObjectLinuxPython3
+# Purpose: Use the Melissa Updater to make the MelissaPhoneObjectLinuxPython3 code usable
 
 ######################### Constants ##########################
 
@@ -48,7 +48,7 @@ ProductName="DQ_PHONE_DATA"
 # Uses the location of the .sh file 
 # Modify this if you want to use 
 CurrentPath=$(pwd)
-ProjectPath="$CurrentPath/MelissaDataPhoneObjectLinuxPython3Sample"
+ProjectPath="$CurrentPath/MelissaPhoneObjectLinuxPython3"
 BuildPath="$ProjectPath"
 DataPath="$ProjectPath/Data"
 
@@ -123,7 +123,7 @@ CheckSOs()
 }
 
 ########################## Main ############################
-printf "\n=============== Sample of Melissa Data Phone Object ================\n                    [ Python3 | Linux | 64BIT ]\n"
+printf "\n====================== Melissa Phone Object ========================\n                    [ Python3 | Linux | 64BIT ]\n"
 
 # Get license (either from parameters or user input)
 if [ -z "$license" ];
@@ -176,14 +176,11 @@ fi
 
 printf "\nAll file(s) have been downloaded/updated!\n"
 
-# Start sample
-# Build project
-printf "\n=========================== BUILD PROJECT ==========================\n"
-
+# Start
 # Run project
 if [ -z "$phone" ];
 then
-    python3 $BuildPath/MelissaDataPhoneObjectLinuxPython3Sample.py --license $license  --dataPath $DataPath
+    python3 $BuildPath/MelissaPhoneObjectLinuxPython3.py --license $license  --dataPath $DataPath
 else
-    python3 $BuildPath/MelissaDataPhoneObjectLinuxPython3Sample.py --license $license  --dataPath $DataPath --phone "$phone"
+    python3 $BuildPath/MelissaPhoneObjectLinuxPython3.py --license $license  --dataPath $DataPath --phone "$phone"
 fi

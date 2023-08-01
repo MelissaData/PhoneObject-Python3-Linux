@@ -2,14 +2,14 @@ from ctypes import *
 from enum import Enum
 import ctypes
 import os
+import sys
 
-dir = os.getcwd()
-
-
-if (os.name == 'nt'):
-  lib = ctypes.CDLL(f'{dir}/MelissaPhoneObjectWindowsPython3/mdPhone.dll')
+if (os.name == 'nt' and sys.version_info[:2] >= (3,8)):
+  lib = ctypes.CDLL('mdPhone.dll', winmode=0)
+elif (os.name == 'nt'):
+  lib = ctypes.CDLL('mdPhone.dll')
 else:
-  lib = ctypes.CDLL(f'{dir}/MelissaPhoneObjectLinuxPython3/libmdPhone.so')
+  lib = ctypes.CDLL('libmdPhone.so')
 
 lib.mdPhoneCreate.argtypes = []
 lib.mdPhoneCreate.restype = c_void_p

@@ -3,3 +3,5 @@ Data/
 MelissaUpdater
 libmdPhone.so
 libmdPhone.so.hash
+*.hash
+# mdPhone_pythoncode.py

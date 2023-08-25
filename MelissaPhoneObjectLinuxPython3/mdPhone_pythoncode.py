@@ -203,7 +203,7 @@ class mdPhone(object):
 	def GetDatabaseDate(self):
 		return lib.mdPhoneGetDatabaseDate(self.I).decode('utf-8')
 
-	def Lookup(self, phone, zip):
+	def Lookup(self, phone, zip=""):
 		return lib.mdPhoneLookup(self.I, phone.encode('utf-8'), zip.encode('utf-8'))
 
 	def CorrectAreaCode(self, phone, zip):
@@ -269,7 +269,7 @@ class mdPhone(object):
 	def GetResults(self):
 		return lib.mdPhoneGetResults(self.I).decode('utf-8')
 
-	def GetResultCodeDescription(self, resultCode, opt):
+	def GetResultCodeDescription(self, resultCode, opt=0):
 		return lib.mdPhoneGetResultCodeDescription(self.I, resultCode.encode('utf-8'), ResultCdDescOpt(opt).value).decode('utf-8')
 
 	def GetStatusCode(self):
@@ -350,7 +350,7 @@ class mdGlobalPhone(object):
 	def GetDatabaseDate(self):
 		return lib.mdGlobalPhoneGetDatabaseDate(self.I).decode('utf-8')
 
-	def Lookup(self, phone, country, origcountry):
+	def Lookup(self, phone, country="", origcountry=""):
 		return lib.mdGlobalPhoneLookup(self.I, phone.encode('utf-8'), country.encode('utf-8'), origcountry.encode('utf-8'))
 
 	def LookupNext(self):
@@ -401,5 +401,5 @@ class mdGlobalPhone(object):
 	def GetResults(self):
 		return lib.mdGlobalPhoneGetResults(self.I).decode('utf-8')
 
-	def GetResultCodeDescription(self, resultCode, opt):
+	def GetResultCodeDescription(self, resultCode, opt=0):
 		return lib.mdGlobalPhoneGetResultCodeDescription(self.I, resultCode.encode('utf-8'), ResultCdDescOpt(opt).value).decode('utf-8')

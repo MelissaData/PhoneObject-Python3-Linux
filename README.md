@@ -29,7 +29,7 @@ And return
 ## Tested Environments
 
 - Linux 64-bit Python 3.8.7, Ubuntu 20.04.05 LTS
-- Melissa data files for 2024-09
+- Melissa data files for 2024-10
 
 ## Required File(s) and Programs
 
@@ -66,8 +66,8 @@ If you see the version number then you have installed Python3 and set up your en
 
 #### Download this project
 ```
-$ git clone https://github.com/MelissaData/PhoneObject-Python3-Linux
-$ cd PhoneObject-Python3-Linux
+git clone https://github.com/MelissaData/PhoneObject-Python3-Linux
+cd PhoneObject-Python3-Linux
 ```
 
 #### Set up Melissa Updater
@@ -133,26 +133,26 @@ Parameters:
 When you have modified the script to match your data location, let's run the script. There are two modes:
 - Interactive 
 
-	The script will prompt the user for a phone number, then use the provided number to test Phone Object. For example:
-	```
-	$ ./MelissaPhoneObjectLinuxPython3.sh
-	```
-    For quiet mode:
-    ```
-    $ ./MelissaPhoneObjectLinuxPython3.sh -quiet
-    ```
+  The script will prompt the user for a phone number, then use the provided number to test Phone Object. For example:
+  ```
+  ./MelissaPhoneObjectLinuxPython3.sh
+  ```
+  For quiet mode:
+  ```
+  ./MelissaPhoneObjectLinuxPython3.sh -quiet
+  ```
 - Command Line 
 
-	You can pass a phone number in ```--phone``` parameter and a license string in ```--license``` parameter to test Phone Object. For example:
-	```
-    $ ./MelissaPhoneObjectLinuxPython3.sh --phone "800-635-4772" 
-    $ ./MelissaPhoneObjectLinuxPython3.sh --phone "800-635-4772" --license "<your_license_string>"
-    ```
-	For quiet mode:
-    ```
-    $ ./MelissaPhoneObjectLinuxPython3.sh --phone "800-635-4772" --quiet
-    $ ./MelissaPhoneObjectLinuxPython3.sh --phone "800-635-4772" --license "<your_license_string>" --quiet
-    ```
+  You can pass a phone number in ```--phone``` parameter and a license string in ```--license``` parameter to test Phone Object. For example:
+  ```
+  ./MelissaPhoneObjectLinuxPython3.sh --phone "800-635-4772" 
+  ./MelissaPhoneObjectLinuxPython3.sh --phone "800-635-4772" --license "<your_license_string>"
+  ```
+  For quiet mode:
+  ```
+  ./MelissaPhoneObjectLinuxPython3.sh --phone "800-635-4772" --quiet
+  ./MelissaPhoneObjectLinuxPython3.sh --phone "800-635-4772" --license "<your_license_string>" --quiet
+  ```
 This is the expected output from a successful setup for interactive mode:
 
 ![alt text](/screenshots/output.png)

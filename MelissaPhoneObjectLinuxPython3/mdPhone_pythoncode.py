@@ -186,13 +186,13 @@ class mdPhone(object):
 		lib.mdPhoneDestroy(self.I)
 
 	def Initialize(self, p1):
-		return ProgramStatus(lib.mdPhoneInitialize(self.I, p1.encode('utf-8')))
+		return ProgramStatus(lib.mdPhoneInitialize(self.I, (p1 or '').encode('utf-8')))
 
 	def GetInitializeErrorString(self):
 		return lib.mdPhoneGetInitializeErrorString(self.I).decode('utf-8')
 
 	def SetLicenseString(self, p1):
-		return lib.mdPhoneSetLicenseString(self.I, p1.encode('utf-8'))
+		return lib.mdPhoneSetLicenseString(self.I, (p1 or '').encode('utf-8'))
 
 	def GetLicenseExpirationDate(self):
 		return lib.mdPhoneGetLicenseExpirationDate(self.I).decode('utf-8')
@@ -204,10 +204,10 @@ class mdPhone(object):
 		return lib.mdPhoneGetDatabaseDate(self.I).decode('utf-8')
 
 	def Lookup(self, phone, zip=""):
-		return lib.mdPhoneLookup(self.I, phone.encode('utf-8'), zip.encode('utf-8'))
+		return lib.mdPhoneLookup(self.I, (phone or '').encode('utf-8'), (zip or '').encode('utf-8'))
 
 	def CorrectAreaCode(self, phone, zip):
-		return lib.mdPhoneCorrectAreaCode(self.I, phone.encode('utf-8'), zip.encode('utf-8'))
+		return lib.mdPhoneCorrectAreaCode(self.I, (phone or '').encode('utf-8'), (zip or '').encode('utf-8'))
 
 	def ComputeDistance(self, p1, p2, p3, p4):
 		return lib.mdPhoneComputeDistance(self.I)
@@ -270,7 +270,7 @@ class mdPhone(object):
 		return lib.mdPhoneGetResults(self.I).decode('utf-8')
 
 	def GetResultCodeDescription(self, resultCode, opt=0):
-		return lib.mdPhoneGetResultCodeDescription(self.I, resultCode.encode('utf-8'), ResultCdDescOpt(opt).value).decode('utf-8')
+		return lib.mdPhoneGetResultCodeDescription(self.I, (resultCode or '').encode('utf-8'), ResultCdDescOpt(opt).value).decode('utf-8')
 
 	def GetStatusCode(self):
 		return lib.mdPhoneGetStatusCode(self.I).decode('utf-8')
@@ -333,13 +333,13 @@ class mdGlobalPhone(object):
 		lib.mdGlobalPhoneDestroy(self.I)
 
 	def Initialize(self, p1):
-		return ProgramStatus(lib.mdGlobalPhoneInitialize(self.I, p1.encode('utf-8')))
+		return ProgramStatus(lib.mdGlobalPhoneInitialize(self.I, (p1 or '').encode('utf-8')))
 
 	def GetInitializeErrorString(self):
 		return lib.mdGlobalPhoneGetInitializeErrorString(self.I).decode('utf-8')
 
 	def SetLicenseString(self, p1):
-		return lib.mdGlobalPhoneSetLicenseString(self.I, p1.encode('utf-8'))
+		return lib.mdGlobalPhoneSetLicenseString(self.I, (p1 or '').encode('utf-8'))
 
 	def GetLicenseExpirationDate(self):
 		return lib.mdGlobalPhoneGetLicenseExpirationDate(self.I).decode('utf-8')
@@ -351,7 +351,7 @@ class mdGlobalPhone(object):
 		return lib.mdGlobalPhoneGetDatabaseDate(self.I).decode('utf-8')
 
 	def Lookup(self, phone, country="", origcountry=""):
-		return lib.mdGlobalPhoneLookup(self.I, phone.encode('utf-8'), country.encode('utf-8'), origcountry.encode('utf-8'))
+		return lib.mdGlobalPhoneLookup(self.I, (phone or '').encode('utf-8'), (country or '').encode('utf-8'), (origcountry or '').encode('utf-8'))
 
 	def LookupNext(self):
 		return lib.mdGlobalPhoneLookupNext(self.I)
@@ -402,4 +402,4 @@ class mdGlobalPhone(object):
 		return lib.mdGlobalPhoneGetResults(self.I).decode('utf-8')
 
 	def GetResultCodeDescription(self, resultCode, opt=0):
-		return lib.mdGlobalPhoneGetResultCodeDescription(self.I, resultCode.encode('utf-8'), ResultCdDescOpt(opt).value).decode('utf-8')
+		return lib.mdGlobalPhoneGetResultCodeDescription(self.I, (resultCode or '').encode('utf-8'), ResultCdDescOpt(opt).value).decode('utf-8')
